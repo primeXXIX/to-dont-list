@@ -1,6 +1,6 @@
 # TO DON'T LIST
 
-#### Stage One
+### Stage One
 
 Specs:
 - [ ] CRUD Operations
@@ -12,10 +12,10 @@ Specs:
 
 - [ ] Use Javascript to interact with DOM
 - [ ] Save session in browser
+- [ ] Strike through completed task
 
 
-
-#### Stage Two
+### Stage Two
 
 Specs:
 

@@ -1,0 +1,19 @@
+{
+  "name": "to-dont-list",
+  "version": "0.0.1",
+  "description": "### Stage One",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primeXXIX/to-dont-list.git"
+  },
+  "author": "PRIME29 && QweenWasabi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/primeXXIX/to-dont-list/issues"
+  },
+  "homepage": "https://github.com/primeXXIX/to-dont-list#readme"
+}
