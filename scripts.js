@@ -17,14 +17,15 @@ let removeAllTask = function() {
 if(listItem.innerHTML.length == 0){
   alert("No list Items to remove")
 }else{
- confirm("Are you sure you want to Remove All Tasks")
+ confirm("Are you sure you want to remove all tasks")
  listItem.innerHTML = ""
 }
 }
 
-// let removeTask = function() {
-//   let listItem = document.getElementById("list")
-//   listItem.click('li', function(removeItem){
-//     removeItem.target.remove()
-//   })
-// }
+let removeItem = function() {
+  var task = document.getElementsByTagName('li');
+  task[0].addEventListener("click", change);
+function change(event) {
+    task[0].remove()
+  }
+}
