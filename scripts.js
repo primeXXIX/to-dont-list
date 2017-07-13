@@ -26,6 +26,12 @@ if(listItem.innerHTML.length == 0){
 document.getElementsByTagName("ul")[0].onclick = function (e) {
   var el = e.target;
 var task = document.getElementsByTagName('li');
-  task[[].indexOf.call(el.parentNode.children, el)].remove()
-
+  task[[].indexOf.call(el.parentNode.children, el)].style.setProperty("text-decoration", "line-through");
 }
+
+//remove functionality 
+// document.getElementsByTagName("ul")[0].onclick = function (e) {
+//   var el = e.target;
+// var task = document.getElementsByTagName('li');
+//   task[[].indexOf.call(el.parentNode.children, el)].remove();
+// }
