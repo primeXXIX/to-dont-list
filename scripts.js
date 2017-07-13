@@ -10,6 +10,8 @@ let addNewTask = function() {
   let textNode = document.createTextNode(newTask)
   li.appendChild(textNode);
   document.getElementById("list").appendChild(li)
+  // Clears text box after input
+  document.getElementById('addTask').value='';
 }
 
 let removeAllTask = function() {
@@ -29,7 +31,11 @@ var task = document.getElementsByTagName('li');
   task[[].indexOf.call(el.parentNode.children, el)].style.setProperty("text-decoration", "line-through");
 }
 
-//remove functionality 
+// Clear form code to be added
+const clearForm = () => {
+
+}
+//remove functionality
 // document.getElementsByTagName("ul")[0].onclick = function (e) {
 //   var el = e.target;
 // var task = document.getElementsByTagName('li');
