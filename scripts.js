@@ -22,10 +22,10 @@ if(listItem.innerHTML.length == 0){
 }
 }
 
-let removeItem = function() {
-  var task = document.getElementsByTagName('li');
-  task[0].addEventListener("click", change);
-function change(event) {
-    task[0].remove()
-  }
+
+document.getElementsByTagName("ul")[0].onclick = function (e) {
+  var el = e.target;
+var task = document.getElementsByTagName('li');
+  task[[].indexOf.call(el.parentNode.children, el)].remove()
+
 }
