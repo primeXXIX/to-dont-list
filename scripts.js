@@ -1,43 +1,62 @@
-// let list = []
+(function() {
+let domList = document.getElementById('list'),
+    list = [],
+    taskInput = document.getElementById("inputField")
 
-// addTask() function
-// removeTask() ''''
-// BuildLIst ''''
+const task = {
+  // add: (val) => {
+  //   list.push({
+  //     value: val, selected: false
+  //   })
+  // }
 
-let addNewTask = function() {
-  let li = document.createElement("li")
-  let newTask = document.getElementById("addTask").value
-  let textNode = document.createTextNode(newTask)
-  li.appendChild(textNode);
-  document.getElementById("list").appendChild(li)
-  // Clears text box after input
-  document.getElementById('addTask').value='';
+  // no curly braces, means implicit return
+  add: () => {
+
+      if (taskInput.value === '') {
+        alert('fll in field')
+      } else {
+        list.push({
+          value: taskInput.value, selected: false
+        })
+    }
+
+
+    task.render()
+    taskInput.value = ''
+  },
+
+  update: () => {
+
+  },
+
+  delete: () => {
+    list = list.filter((item) => {
+      return item.selected === false
+    })
+    task.render()
+  },
+
+  render: () => {
+    domList.innerHTML = '' //clear the list
+    list.forEach(item =>
+      domList.innerHTML += item.selected
+        ? `<li class="selected">${item.value}</li>`
+        :  `<li>${item.value}</li>`)
+  },
+
+  select: (event) => {
+    event.target.classList.toggle('selected')
+    list.forEach(item => {
+      if (event.target.innerHTML === item.value) {
+        item.selected = !item.selected
+      }
+    })
+  },
 }
 
-let removeAllTask = function() {
-  let listItem = document.getElementById("list")
-if(listItem.innerHTML.length == 0){
-  alert("No list Items to remove")
-}else{
- confirm("Are you sure you want to remove all tasks")
- listItem.innerHTML = ""
-}
-}
-
-
-document.getElementsByTagName("ul")[0].onclick = function (e) {
-  var el = e.target;
-var task = document.getElementsByTagName('li');
-  task[[].indexOf.call(el.parentNode.children, el)].style.setProperty("text-decoration", "line-through");
-}
-
-// Clear form code to be added
-const clearForm = () => {
-
-}
-//remove functionality
-// document.getElementsByTagName("ul")[0].onclick = function (e) {
-//   var el = e.target;
-// var task = document.getElementsByTagName('li');
-//   task[[].indexOf.call(el.parentNode.children, el)].remove();
-// }
+document.getElementById("addButton").addEventListener('click', task.add)
+document.getElementById("removeButton").addEventListener('click', task.delete)
+domList.addEventListener('click', task.select)
+task.render()
+})()
