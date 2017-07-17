@@ -12,9 +12,16 @@ const task = {
 
   // no curly braces, means implicit return
   add: () => {
-    list.push({
-      value: taskInput.value, selected: false
-    })
+
+      if (taskInput.value === '') {
+        alert('fll in field')
+      } else {
+        list.push({
+          value: taskInput.value, selected: false
+        })
+    }
+
+
     task.render()
     taskInput.value = ''
   },
