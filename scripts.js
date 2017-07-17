@@ -1,4 +1,4 @@
-(function() {
+const task = (function() {
 let domList = document.getElementById('list'),
     list = [],
     taskInput = document.getElementById("inputField")
@@ -10,11 +10,13 @@ const task = {
   //   })
   // }
 
+  list: list,
   // no curly braces, means implicit return
   add: () => {
 
       if (taskInput.value === '') {
-        alert('fll in field')
+        console.log('LOG!!!!');
+        // document.alert('fll in field')
       } else {
         list.push({
           value: taskInput.value, selected: false
@@ -59,4 +61,8 @@ document.getElementById("addButton").addEventListener('click', task.add)
 document.getElementById("removeButton").addEventListener('click', task.delete)
 domList.addEventListener('click', task.select)
 task.render()
+
+return task
 })()
+
+module.exports = task

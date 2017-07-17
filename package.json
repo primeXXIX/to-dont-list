@@ -4,7 +4,7 @@
   "description": "### Stage One",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require ./test/setup.js --recursive ./test/index.js || true"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/primeXXIX/to-dont-list/issues"
   },
-  "homepage": "https://github.com/primeXXIX/to-dont-list#readme"
+  "homepage": "https://github.com/primeXXIX/to-dont-list#readme",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "jsdom": "^11.1.0",
+    "mocha": "^3.4.2"
+  }
 }
